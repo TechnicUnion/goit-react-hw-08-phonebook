@@ -3,14 +3,14 @@ import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Layout } from './Layout';
 import { Register } from '../pages/Registration';
-import { Login } from 'pages/Login';
-import { Home } from 'pages/Home';
+import { Login } from 'pages/login';
+import { Home } from 'pages/home';
 import { getCurrentUser } from 'redux/auth/authOperations';
 import { PrivateRoute, PublicRoute } from 'routes';
 import { error } from 'redux/auth/authSlice';
 
 const Contacts = lazy(() =>
-  import('pages/Contacts').then(module => ({
+  import('pages/contacts').then(module => ({
     ...module,
     default: module.Contacts,
   }))
