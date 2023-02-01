@@ -2,7 +2,7 @@ import { lazy, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Layout } from './Layout';
-import { Register } from '../pages/Register/Register';
+import { Register } from '../pages/Register/Register.js';
 import { Login } from 'pages/Login';
 import { Home } from 'pages/Home';
 import { getCurrentUser } from 'redux/auth/authOperations';
