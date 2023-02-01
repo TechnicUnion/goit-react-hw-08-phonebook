@@ -10,7 +10,7 @@ import { PrivateRoute, PublicRoute } from 'routes';
 import { error } from 'redux/auth/authSlice';
 
 const Contacts = lazy(() =>
-  import('../pages/Contacts').then(module => ({
+  import('pages/Contacts').then(module => ({
     ...module,
     default: module.Contacts,
   }))
