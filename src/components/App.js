@@ -19,7 +19,7 @@ const Contacts = lazy(() =>
 function App() {
   const [currentPath, setCurrentPath] = useState(null);
   const dispatch = useDispatch();
-
+  console.log('hello');
   useEffect(() => {
     dispatch(getCurrentUser());
   }, [dispatch]);
