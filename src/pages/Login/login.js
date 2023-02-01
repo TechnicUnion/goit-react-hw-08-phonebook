@@ -3,7 +3,7 @@ import { selectIsgettingCurrent } from 'redux/selectors';
 import { LoginForm } from 'components/LoginForm';
 import { Section, Title } from 'styles';
 
-const Login = ({ setPath }) => {
+export const Login = ({ setPath }) => {
   const isFetchingCurrentUser = useSelector(selectIsgettingCurrent);
 
   return (
@@ -15,5 +15,3 @@ const Login = ({ setPath }) => {
     )
   );
 };
-
-export default Login;
