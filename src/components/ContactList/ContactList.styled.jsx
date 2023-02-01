@@ -25,5 +25,4 @@ export const ContactItemWrapper = styled.div`
 
 export const DeleteBtn = styled(Button)`
   font-size: 12px;
-  background-color: rgb(61, 203, 231);
 `;

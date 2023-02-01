@@ -8,7 +8,7 @@ export const Container = styled.div`
   margin-top: 30vh;
 `;
 
-export const Hero = styled(Title)`
+export const Welcome = styled(Title)`
   font-size: 60px;
   margin-bottom: 0;
 `;

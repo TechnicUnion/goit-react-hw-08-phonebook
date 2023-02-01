@@ -1,11 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
-import {
-  fetchContacts,
-  deleteContact,
-} from 'redux/contacts/contactsOperations';
+import { fetchContacts, deleteContact } from 'redux/contactsOperations';
 import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
-import { Loader } from 'components/Loader';
 import {
   ContactItem,
   ContactItemWrapper,
@@ -25,7 +21,7 @@ export function ContactList() {
 
   return (
     <>
-      {isLoading && <Loader />}
+      {isLoading && <p>Loading contacts...</p>}
       {error && <p>{error}</p>}
       <List>
         {items.length > 0

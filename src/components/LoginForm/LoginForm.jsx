@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import * as yup from 'yup';
-import { login } from 'redux/auth/authOperations';
+import { login } from 'redux/authOperations';
 import { selectAuthError } from 'redux/selectors';
 import { Button, Input, Label } from 'styles';
 
@@ -51,12 +51,12 @@ export const LoginForm = ({ setPath }) => {
             name="password"
             onChange={formik.handleChange}
             value={formik.values.password}
-            placeholder="The minimum number of characters is 6"
+            placeholder="more then 6 symbols"
           />
           <Button type="submit">Submit</Button>
         </Form>
       </Formik>
-      {error && <p>Email or password entered incorrectly, please try again</p>}
+      {error && <p>Something whent wrong, please try again</p>}
     </>
   );
 };

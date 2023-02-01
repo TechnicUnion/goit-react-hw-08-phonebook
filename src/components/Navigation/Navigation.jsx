@@ -12,7 +12,7 @@ export const Navigation = () => {
     <NavBox>
       <div>
         <NavItem to={'/'}>Home</NavItem>
-        {isLoggedIn && <NavItem to={'contacts'}>Contacts</NavItem>}
+        <NavItem to={'contacts'}>Contacts</NavItem>
       </div>
 
       {!isFetchingCurrentUser && (
@@ -22,7 +22,7 @@ export const Navigation = () => {
           ) : (
             <div>
               <NavItem to={'register'}>Register</NavItem>
-              <NavItem to={'login'}>Log In</NavItem>
+              <NavItem to={'login'}>Log in</NavItem>
             </div>
           )}
         </div>

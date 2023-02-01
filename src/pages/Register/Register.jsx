@@ -4,7 +4,7 @@ import { RegisterForm } from '../../components/RegisterForm';
 export const Register = ({ setPath }) => {
   return (
     <Section>
-      <Title>Enter your registration details</Title>
+      <Title>Register yourself</Title>
       <RegisterForm setPath={setPath} />
     </Section>
   );

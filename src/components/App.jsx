@@ -2,15 +2,15 @@ import { lazy, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Layout } from './Layout';
-import { Register } from 'pages/registration';
-import { Login } from 'pages/login';
-import { Home } from 'pages/home';
-import { getCurrentUser } from 'redux/auth/authOperations';
+import { Register } from '../pages/Register';
+import { Login } from 'pages/Login';
+import { Home } from 'pages/Home';
+import { getCurrentUser } from 'redux/authOperations';
 import { PrivateRoute, PublicRoute } from 'routes';
-import { error } from 'redux/auth/authSlice';
+import { renewError } from 'redux/authSlice';
 
 const Contacts = lazy(() =>
-  import('pages/contacts').then(module => ({
+  import('../pages/Contacts').then(module => ({
     ...module,
     default: module.Contacts,
   }))
@@ -25,7 +25,7 @@ function App() {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(error());
+    dispatch(renewError());
   }, [currentPath, dispatch]);
 
   const handleCurrentPath = path => {
@@ -33,7 +33,7 @@ function App() {
   };
 
   return (
-    <div>
+    <>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route
@@ -70,7 +70,7 @@ function App() {
           />
         </Route>
       </Routes>
-    </div>
+    </>
   );
 }
 

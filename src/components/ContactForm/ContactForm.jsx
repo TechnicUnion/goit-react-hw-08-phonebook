@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
-import { addContact } from 'redux/contacts/contactsOperations';
+import { addContact } from 'redux/contactsOperations';
 import { Form, ContactInput } from './ContactForm.styled';
 import { Label, Button } from 'styles';
 
@@ -39,7 +39,7 @@ export function ContactForm() {
         value={name}
         onChange={e => setName(e.target.value)}
       />
-      <Label>Phone number</Label>
+      <Label>Phone</Label>
       <ContactInput
         type="tel"
         name="number"

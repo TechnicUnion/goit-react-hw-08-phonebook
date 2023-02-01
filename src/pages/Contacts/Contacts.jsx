@@ -1,16 +1,15 @@
 import { ContactForm } from 'components/ContactForm';
 import { ContactList } from 'components/ContactList';
 import { Filter } from 'components/Filter';
-import { Title } from 'styles';
-import { ContactsSection } from './Contacts.styled';
+import { Section, Title } from 'styles';
 
 export function Contacts() {
   return (
-    <ContactsSection>
+    <Section>
       <Title>Add new contact</Title>
       <ContactForm />
       <Filter />
       <ContactList />
-    </ContactsSection>
+    </Section>
   );
 }
