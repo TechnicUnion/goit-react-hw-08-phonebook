@@ -1,10 +1,11 @@
+import { Section, Title } from 'styles';
 import { RegisterForm } from '../../components/RegisterForm';
 
 export const Register = ({ setPath }) => {
   return (
-    <div>
-      <h2>Register yourself</h2>
+    <Section>
+      <Title>Register yourself</Title>
       <RegisterForm setPath={setPath} />
-    </div>
+    </Section>
   );
 };

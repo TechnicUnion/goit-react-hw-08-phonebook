@@ -13,7 +13,7 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    renewError(state) {
+    error(state) {
       state.error = null;
     },
   },
@@ -56,4 +56,4 @@ export const authSlice = createSlice({
   },
 });
 
-export const { renewError } = authSlice.actions;
+export const { error } = authSlice.actions;

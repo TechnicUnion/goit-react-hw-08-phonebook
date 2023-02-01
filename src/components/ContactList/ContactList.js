@@ -1,20 +1,52 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ContactItem from 'components/ContactItem/ContactItem.js';
+import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import {
+  fetchContacts,
+  deleteContact,
+} from 'redux/contacts/contactsOperations';
+import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
+import { Loader } from 'components/Loader';
+import {
+  ContactItem,
+  ContactItemWrapper,
+  DeleteBtn,
+  List,
+} from './ContactList.styled';
 
-const ContactList = ({ itemList, onDeleteClick }) => (
-  <ul>
-    {itemList.map(item => (
-      <li key={item.id}>
-        <ContactItem item={item} onDeleteClick={onDeleteClick} />
-      </li>
-    ))}
-  </ul>
-);
+export function ContactList() {
+  const dispatch = useDispatch();
+  const items = useSelector(selectContacts);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
 
-export default ContactList;
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
-ContactList.propTypes = {
-  itemList: PropTypes.array.isRequired,
-  onDeleteClick: PropTypes.func.isRequired,
-};
+  return (
+    <>
+      {isLoading && <Loader />}
+      {error && <p>{error}</p>}
+      <List>
+        {items.length > 0
+          ? items.map(item => {
+              const { id, name, number } = item;
+              return (
+                <ContactItem key={id}>
+                  <ContactItemWrapper>
+                    {name}: {number}
+                  </ContactItemWrapper>
+                  <DeleteBtn
+                    type="button"
+                    onClick={() => dispatch(deleteContact(id))}
+                  >
+                    Delete
+                  </DeleteBtn>
+                </ContactItem>
+              );
+            })
+          : null}
+      </List>
+    </>
+  );
+}
