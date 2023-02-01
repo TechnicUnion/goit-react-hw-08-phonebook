@@ -2,8 +2,8 @@ import { lazy, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Layout } from './Layout';
-import { Register } from '../pages/Registration';
-import { Login } from '../pages/login';
+import { Register } from '../pages/registration';
+import { Login } from '../pages/login/Login';
 import { Home } from 'pages/home';
 import { getCurrentUser } from 'redux/auth/authOperations';
 import { PrivateRoute, PublicRoute } from 'routes';
@@ -19,7 +19,7 @@ const Contacts = lazy(() =>
 function App() {
   const [currentPath, setCurrentPath] = useState(null);
   const dispatch = useDispatch();
-  console.log('hello');
+
   useEffect(() => {
     dispatch(getCurrentUser());
   }, [dispatch]);
