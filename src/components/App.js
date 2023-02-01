@@ -2,7 +2,7 @@ import { lazy, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Layout } from './Layout';
-import { Register } from '../pages/Register/Register.js';
+import { Register } from '../pages/Register';
 import { Login } from 'pages/Login';
 import { Home } from 'pages/Home';
 import { getCurrentUser } from 'redux/auth/authOperations';
@@ -10,7 +10,7 @@ import { PrivateRoute, PublicRoute } from 'routes';
 import { error } from 'redux/auth/authSlice';
 
 const Contacts = lazy(() =>
-  import('pages/Contacts').then(module => ({
+  import('../pages/Contacts').then(module => ({
     ...module,
     default: module.Contacts,
   }))
