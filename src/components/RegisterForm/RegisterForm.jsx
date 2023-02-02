@@ -61,12 +61,12 @@ export const RegisterForm = ({ setPath }) => {
             name="password"
             onChange={formik.handleChange}
             value={formik.values.password}
-            placeholder="more then 6 symbols"
+            placeholder="Minimum number of characters is 6"
           />
           <Button type="submit">Submit</Button>
         </Form>
       </Formik>
-      {error && <p>Something whent wrong, please try again</p>}
+      {error && <p>Email or password entered incorrectly, please try again</p>}
     </>
   );
 };

@@ -9,7 +9,7 @@ export const Login = ({ setPath }) => {
   return (
     !isFetchingCurrentUser && (
       <Section>
-        <Title>Login yourself</Title>
+        <Title>Login</Title>
         <LoginForm setPath={setPath} />
       </Section>
     )
