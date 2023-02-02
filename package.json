@@ -2,7 +2,7 @@
   "name": "goit-react-hw-08-phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ArtemTeslenko.github.io/goit-react-hw-08-phonebook/",
+  "homepage": "https://technicunion.github.io/goit-react-hw-08-phonebook/",
   "dependencies": {
     "@fontsource/roboto": "^4.5.8",
     "@mui/styled-engine-sc": "^5.11.0",
