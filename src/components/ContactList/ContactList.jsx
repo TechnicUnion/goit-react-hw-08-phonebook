@@ -8,6 +8,7 @@ import {
   DeleteBtn,
   List,
 } from './ContactList.styled';
+import Loader from 'components/Loader/Loader';
 
 export function ContactList() {
   const dispatch = useDispatch();
@@ -21,7 +22,8 @@ export function ContactList() {
 
   return (
     <>
-      {isLoading && <p>Loading contacts...</p>}
+      {isLoading && <Loader />}
+
       {error && <p>{error}</p>}
       <List>
         {items.length > 0
